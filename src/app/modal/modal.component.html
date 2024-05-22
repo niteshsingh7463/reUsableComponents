@@ -1,10 +1,11 @@
-<h2>Animated Modal with Header and Footer</h2>
+<div class="modal-container">
+    <h2>Animated Modal with Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn" (click)="openModal=true">Open Modal</button>
 
 <!-- The Modal -->
-<div id="myModal" class="modal" [ngStyle]="{display: openModal?'block':'none'}">
+<div id="myModal" class="modal" [ngStyle]="{display: openModal?'block':'none'}" #myModal>
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -21,4 +22,5 @@
     </div>
   </div>
 
+</div>
 </div>

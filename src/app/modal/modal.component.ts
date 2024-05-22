@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -10,6 +10,15 @@ import { Component } from '@angular/core';
 })
 export class ModalComponent {
   openModal = false;
+  @ViewChild('myModal')
+  myModal!: ElementRef;
 constructor(){
+}
+
+@HostListener('window:click', ['$event'])
+onWindowClick(event:any) {
+  if(event.target==this.myModal.nativeElement){
+    this.openModal=false;
+  }
 }
 }
